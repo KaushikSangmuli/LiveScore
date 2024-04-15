@@ -22,6 +22,6 @@ fetch("https://m.cricbuzz.com/api/home")
     team2.forEach((names)=>{
         names.innerText = data2.matches[0].match.matchInfo.team2.teamSName
     })
-    teamOneScore.innerText = `${data2.matches[0].match.matchScore.team1Score.inngs1.runs} - ${data2.matches[0].match.matchScore.team1Score.inngs1.wkts} (${data2.matches[0].match.matchScore.team1Score.inngs1.overs})`
-    teamTwoScore.innerText = `${data2.matches[0].match.matchScore.team2Score.inngs1.runs} - ${data2.matches[0].match.matchScore.team2Score.inngs1.wkts} (${data2.matches[0].match.matchScore.team2Score.inngs1.overs})`
+    teamOneScore.innerText = `${data2.matches[0].match.matchScore.team1Score.inngs1.runs} - ${data2.matches[0].match.matchScore.team1Score.inngs1.wickets} (${data2.matches[0].match.matchScore.team1Score.inngs1.overs})`
+    teamTwoScore.innerText = `${data2.matches[0].match.matchScore.team2Score.inngs1.runs} - ${data2.matches[0].match.matchScore.team2Score.inngs1.wickets} (${data2.matches[0].match.matchScore.team2Score.inngs1.overs})`
 })
