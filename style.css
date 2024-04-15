@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: poppins;
+}
+#check{
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 100px;
+}
+.scorebox{
+    background-color: yellow;
+    width: 60%;
+    margin: auto;
+}
+h2{
+    padding-top: 40px;
+    text-align: center;
+}
+h4{
+    text-align: center;
+}
+.title{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.score-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 32px;
+    padding-bottom: 32px;
+
+}
+.team{
+    display: flex;
+    border: 2px solid black;
+    width: 80%;
+    margin-inline:auto ;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 600;
+}
+.team img {
+    width: 20%;
+    object-fit: contain;
+}
