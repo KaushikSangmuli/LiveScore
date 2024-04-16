@@ -1,27 +1,36 @@
-const h2 = document.querySelector("h2")
-const h4 = document.querySelector("h4")
-const team1 = document.querySelectorAll(".team1")
-const team2 = document.querySelectorAll(".team2")
-const teamOneScore = document.querySelector("#team-1-score")
-const teamTwoScore = document.querySelector("#team-2-score")
+const scoreBox = document.querySelector(".scorebox")
 
+const updateSore = () => {
 fetch("https://m.cricbuzz.com/api/home")
-.then((response)=>{
+.then((response) =>{
     console.log(response)
-    return a= response
+    return response.json()
 }).then((data)=>{
-    return data.json()
-}).then((data2)=>{
-    console.log(data2)
-    // console.log(data2.matches[0].match.matchInfo.seriesName)
-    h2.innerText = data2.matches[0].match.matchInfo.seriesName
-    h4.innerText = data2.matches[0].match.matchInfo.shortStatus
-    team1.forEach((names)=>{
-        names.innerText = data2.matches[0].match.matchInfo.team1.teamSName
-    })
-    team2.forEach((names)=>{
-        names.innerText = data2.matches[0].match.matchInfo.team2.teamSName
-    })
-    teamOneScore.innerText = `${data2.matches[0].match.matchScore.team1Score.inngs1.runs} - ${data2.matches[0].match.matchScore.team1Score.inngs1.wickets} (${data2.matches[0].match.matchScore.team1Score.inngs1.overs})`
-    teamTwoScore.innerText = `${data2.matches[0].match.matchScore.team2Score.inngs1.runs} - ${data2.matches[0].match.matchScore.team2Score.inngs1.wickets} (${data2.matches[0].match.matchScore.team2Score.inngs1.overs})`
+    console.log(data)
+  return  data.matches[0].match
+
+}).then((data)=>{
+    console.log(data)
+   scoreBox.innerHTML = `<h2>  ${data.matchInfo.seriesName} </h2>
+   <h4 > ${data.matchInfo.shortStatus} </h4>
+   <div class="title">
+       <p class="team1"> ${data.matchInfo.team1.teamName} </p>
+       <p> Vs </p>
+       <p class="team2"> ${ data.matchInfo.team2.teamName}</p>
+   </div>
+   <div class="score-card">
+       <div class="team">
+           <p>  ${data.matchInfo.team1.teamName} </p>
+           <p>  ${data?.matchScore?.team1Score?.inngs1?.runs ?? "__"}- ${data?.matchScore?.team1Score?.inngs1?.wickets ?? "_"}  (${data?.matchScore?.team1Score?.inngs1?.overs?? "_"}) </p>
+       </div>
+       <div class="team">
+           <p> ${data.matchInfo.team2.teamName}</p>
+           <p> ${data?.matchScore?.team1Score?.inngs1?.runs ?? "__"} - ${data?.matchScore?.team2Score?.inngs1?.wickets ?? "_"}  (${data?.matchScore?.team2Score?.inngs1?.overs?? "_"})</p>
+       </div>
+   </div>`
 })
+}
+
+updateSore();
+
+setInterval(updateSore, 6000);

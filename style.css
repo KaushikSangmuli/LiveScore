@@ -1,49 +1,68 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: poppins;
 }
-#check{
-    font-size: 2rem;
-    text-align: center;
-    margin-top: 100px;
+
+body{
+    background-color: rgb(162, 210, 255)
+    
 }
+
 .scorebox{
-    background-color: rgb(219, 155, 17);
-    width: 90%;
-    margin: auto;
-}
-h2{
-    padding-top: 40px;
-    text-align: center;
-}
-h4{
-    text-align: center;
-}
-.title{
-    margin-top: 20px;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    margin-inline: auto;
+    gap: 24px;
+    padding: 32px;
+    border-radius: 16px;
+    margin-top: 40px;
+    background-color: rgb(189, 224, 254) ;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.397);
+}
+
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:  100%;
+    gap: 30px;
 }
 .score-card{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 40px;
-    margin-top: 32px;
-    padding-bottom: 32px;
-
+    gap: 12px;
+    padding: 16px;
+    width: 100%;
+    
 }
+
 .team{
     display: flex;
-    border: 2px solid black;
-    width: 80%;
-    margin-inline:auto ;
-    justify-content: space-evenly;
+    justify-content:space-between ;
     align-items: center;
-    font-weight: 600;
+    width: 100%;
+    gap :20px;
+    
 }
-.team img {
-    width: 20%;
-    object-fit: contain;
+.team img{
+    width: 12%;
+}
+
+#copyright{
+    font-size: 0.7rem;
+    text-align: center;
+    color: red;
+    margin-top: 60px;
+}
+@media (max-width : 686px) {
+    .scorebox{
+        width: 90%;
+    }
+    h2{
+        font-size: 1.3rem;
+    }
 }
