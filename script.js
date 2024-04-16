@@ -25,7 +25,7 @@ fetch("https://m.cricbuzz.com/api/home")
        </div>
        <div class="team">
            <p> ${data.matchInfo.team2.teamName}</p>
-           <p> ${data?.matchScore?.team1Score?.inngs1?.runs ?? "__"} - ${data?.matchScore?.team2Score?.inngs1?.wickets ?? "_"}  (${data?.matchScore?.team2Score?.inngs1?.overs?? "_"})</p>
+           <p> ${data?.matchScore?.team2Score?.inngs1?.runs ?? "__"} - ${data?.matchScore?.team2Score?.inngs1?.wickets ?? "_"}  (${data?.matchScore?.team2Score?.inngs1?.overs?? "_"})</p>
        </div>
    </div>`
 })
