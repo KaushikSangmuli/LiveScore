@@ -1,4 +1,12 @@
 const scoreBox = document.querySelector(".scorebox")
+const clock = document.querySelector("#clock")
+
+
+setInterval(()=>{
+    const date = new Date()
+    clock.innerText = `${date.getHours()-12}:     ${date.getMinutes()}:     ${date.getSeconds()}`
+} , 1000)
+
 
 const updateSore = () => {
 fetch("https://m.cricbuzz.com/api/home")
@@ -27,10 +35,10 @@ fetch("https://m.cricbuzz.com/api/home")
            <p> ${data.matchInfo.team2.teamName}</p>
            <p> ${data?.matchScore?.team2Score?.inngs1?.runs ?? "__"} - ${data?.matchScore?.team2Score?.inngs1?.wickets ?? "_"}  (${data?.matchScore?.team2Score?.inngs1?.overs?? "_"})</p>
        </div>
-   </div>`
+   </div>`   
 })
 }
 
 updateSore();
 
-setInterval(updateSore, 6000);
+// setInterval(updateSore, 3000);
