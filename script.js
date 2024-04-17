@@ -4,7 +4,10 @@ const clock = document.querySelector("#clock")
 
 setInterval(()=>{
     const date = new Date()
-    clock.innerText = `${date.getHours()-12}:     ${date.getMinutes()}:     ${date.getSeconds()}`
+    let hours = String(date.getHours()-12).padStart(2,"0")
+    let minutes = String(date.getMinutes()).padStart(2,"0")
+    let seconds = String(date.getSeconds()).padStart(2,"0")
+    clock.innerText = `${hours}    :     ${minutes}    :     ${seconds}`
 } , 1000)
 
 
@@ -41,4 +44,4 @@ fetch("https://m.cricbuzz.com/api/home")
 
 updateSore();
 
-// setInterval(updateSore, 3000);
+setInterval(updateSore, 3000);
